@@ -1,19 +1,12 @@
-package "graphicsmagick" do #install graphicsmagick
-	action :install
+bash "install_graphics_magick" do |variable|
+	user "root"
+	cwd "/tmp"
+	code <<-EOH
+	wget ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/GraphicsMagick-1.3.15.tar.gz
+	tar -xvf GraphicsMagick-1.3.15.tar.gz
+	cd GraphicsMagick-1.3.15
+	./configure
+	make
+	sudo make install
+	EOH
 end
-
-
-
-# remote_file "/engineyard/portage/distfiles/GraphicsMagick-1.3.tar.bz" do
-#   source "http://distfiles.gentoo.org/distfiles/eselect-emacs-1.14.tar.bz2"
-#   owner "root"
-#   group "root"
-#   mode "0655"
-#   backup 0
-#   not_if { FileTest.exists?("/engineyard/portage/distfiles/GraphicsMagick-1.3.tar.bz") }
-# end
-
-# execute "install_" do
-#   command "emerge app-editors/emacs"
-#   not_if { FileTest.exists?("/usr/bin/emacs-22") }
-# end
