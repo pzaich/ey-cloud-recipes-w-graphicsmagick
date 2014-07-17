@@ -1,5 +1,7 @@
-require_recipe "delayed_job"
 require_recipe "graphicsmagick"
+require_recipe 'libreoffice'
+require_recipe 'poppler'
+require_recipe 'tesseract'
 
 #execute "testing" do
 #  command %Q{
