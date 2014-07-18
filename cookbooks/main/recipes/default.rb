@@ -3,6 +3,9 @@ require_recipe 'libreoffice'
 require_recipe 'poppler'
 require_recipe 'tesseract'
 
+# uncomment to use the sidekiq recipe. See cookbooks/sidekiq/readme.md for documentation.
+include_recipe "sidekiq"
+
 #execute "testing" do
 #  command %Q{
 #    echo "i ran at #{Time.now}" >> /root/cheftime
@@ -46,13 +49,13 @@ require_recipe 'tesseract'
 # require_recipe "resque"
 
 #uncomment to run redis.yml recipe
-require_recipe "redis-yml"
+# require_recipe "redis-yml"
 
 #uncomment to run the resque-scheduler recipe
 # require_recipe "resque-scheduler"
 
 #uncomment to run the redis recipe
-require_recipe "redis"
+# require_recipe "redis"
 
 #uncomment to run the api-keys-yml recipe
 # require_recipe "api-keys-yml"
