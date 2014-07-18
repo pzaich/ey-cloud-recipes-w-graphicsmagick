@@ -4,7 +4,7 @@ require_recipe 'poppler'
 require_recipe 'tesseract'
 
 # uncomment to use the sidekiq recipe. See cookbooks/sidekiq/readme.md for documentation.
-include_recipe "sidekiq"
+# include_recipe "sidekiq"
 
 #execute "testing" do
 #  command %Q{
